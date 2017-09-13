@@ -1,4 +1,7 @@
 module.exports = {
     prefix: 'api',
-    port: 3000,
+    port: {
+        http: 3000,
+        http2: 3001
+    },
 }

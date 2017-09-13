@@ -6,8 +6,10 @@ Koa 2.x API using:
 
  - Koa 2.x
  - Asynchronous Functions (Async/Await)
+ - HTTP/2
  - Mongodb
  - Mongoose
+ - Mocha and Chai
 
 ## Running
 Install dependencies

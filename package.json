@@ -12,6 +12,8 @@
   "dependencies": {
     "chalk": "^2.1.0",
     "glob": "^7.1.2",
+    "http": "0.0.0",
+    "http2": "^3.3.6",
     "koa": "^2.3.0",
     "koa-body": "^2.3.0",
     "koa-compress": "^2.0.0",
