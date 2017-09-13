@@ -1,5 +1,4 @@
 [![dependency Status](https://img.shields.io/david/xappsdev/boilerplate-koa2.svg?maxAge=1000)](https://img.shields.io/david/xappsdev/boilerplate-koa2.svg)
-
 [![devDependency Status](https://img.shields.io/david/dev/xappsdev/boilerplate-koa2.svg?maxAge=1000)](https://img.shields.io/david/dev/xappsdev/boilerplate-koa2.svg)
 
 ## Description
