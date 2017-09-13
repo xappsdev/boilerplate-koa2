@@ -1,6 +1,6 @@
 [![dependency Status](https://img.shields.io/david/xappsdev/boilerplate-koa2.svg?maxAge=1000)](https://img.shields.io/david/xappsdev/boilerplate-koa2.svg)
 
-[![devDependency Status](https://img.shields.io/david/dev/jeffijoe/koa-es7-boilerplate.svg?maxAge=1000)](https://david-dm.org/jeffijoe/koa-es7-boilerplate)
+[![devDependency Status](https://img.shields.io/david/dev/xappsdev/boilerplate-koa2.svg?maxAge=1000)](https://img.shields.io/david/dev/xappsdev/boilerplate-koa2.svg)
 
 ## Description
 Koa 2.x API using:
