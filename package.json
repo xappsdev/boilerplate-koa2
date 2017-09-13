@@ -5,25 +5,28 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
-    "build": "babel app -d dist -s",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "author": "X-Apps Desenvolvimento de Sistemas",
   "license": "ISC",
   "dependencies": {
     "chalk": "^2.1.0",
     "glob": "^7.1.2",
-    "http": "0.0.0",
     "koa": "^2.3.0",
     "koa-body": "^2.3.0",
     "koa-compress": "^2.0.0",
     "koa-convert": "^1.2.0",
     "koa-cors": "0.0.16",
     "koa-cors-error": "0.0.2",
-    "koa-helmet": "^3.2.0"
+    "koa-helmet": "^3.2.0",
+    "koa-logger": "^3.0.1",
+    "koa-router": "^7.2.1",
+    "mongoose": "^4.11.11"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "nodemon": "^1.12.0"
+    "chai": "^4.1.2",
+    "mocha": "^3.5.3",
+    "nodemon": "^1.12.0",
+    "supertest": "^3.0.0"
   }
 }

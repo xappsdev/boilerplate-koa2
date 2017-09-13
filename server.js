@@ -7,7 +7,6 @@ const cors = require('koa-cors')
 const corsError = require('koa-cors-error')
 const helmet = require('koa-helmet')
 const loggerMiddleware = require('koa-logger')
-const mount = require('koa-mount')
 
 // constants
 const port = require('./app/config/api').port
@@ -40,3 +39,5 @@ app = routes(app)
 http.createServer(app.callback()).listen(port, () => {
     logger.log(`Server listening at http://localhost:${port}/api/`)
 })
+
+module.exports = app
