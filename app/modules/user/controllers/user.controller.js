@@ -1,4 +1,4 @@
-const administrator = require('../../../models').models.administrator
+const administrator = require('../../../models').models.user
 
 const factory = new (require('../../../common/controllerCommon'))(administrator)
 const service = require('../services/user.service')
