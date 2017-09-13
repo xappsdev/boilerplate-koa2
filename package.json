@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
+    "build": "babel app -d dist -s",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "X-Apps Desenvolvimento de Sistemas",
@@ -22,6 +23,7 @@
     "koa-helmet": "^3.2.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "nodemon": "^1.12.0"
   }
 }
