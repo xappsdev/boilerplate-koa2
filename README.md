@@ -23,11 +23,11 @@ npm start
 ```
 **Note : Please make sure your MongoDB is running before using ```npm start``` **
 
-
 Run Test
 ```
 npm test
 ```
+
 ## Running with docker
 single command
 ```
