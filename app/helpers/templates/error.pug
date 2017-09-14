@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    title= 'Error - ' + status
+  body
+    #error
+      h3 Error:
+      pre: code= status
+      h3 Message:
+      pre: code= error
+      h3 Stack:
+      pre: code= stack

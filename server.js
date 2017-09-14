@@ -5,6 +5,7 @@ const compressible = require('compressible')
 const convert = require('koa-convert')
 const cors = require('koa-cors')
 const corsError = require('koa-cors-error')
+const error = require('koa-error')
 const fs = require('fs')
 const helmet = require('koa-helmet')
 const http = require('http')
@@ -12,10 +13,11 @@ const http2 = require('http2')
 const loggerMiddleware = require('koa-logger')
 
 // constants
-const port = require('./app/config/api').port
+const jwt = require('./app/middlewares/jwt')
 const logger = require('./app/helpers/logger')
 const models = require('./app/models')
 const routes = require('./app/routes')
+const port = require('./app/config/api').port
 
 // certificados
 const certificates = {  
@@ -45,9 +47,16 @@ app.use(compress({
   threshold: 1024,
   flush: require('zlib').Z_SYNC_FLUSH
 }))
+app.use(error({
+  engine: 'pug',
+  template: __dirname + '/app/helpers/templates/error.pug'
+}))
 
-// models and routes
+// models
 models.init()
+
+// routes
+app.use(jwt)
 app = routes(app)
 
 // start
