@@ -1,6 +1,7 @@
 // lib's
 const body = require('koa-body')
 const compress = require('koa-compress')
+const compressible = require('compressible')
 const convert = require('koa-convert')
 const cors = require('koa-cors')
 const corsError = require('koa-cors-error')
@@ -37,6 +38,13 @@ app.use(convert(cors(
     headers: ['Content-Type', 'Authorization'],
   }
 )))
+app.use(compress({
+  filter: function (content_type) {
+  	return compressible(content_type)
+  },
+  threshold: 1024,
+  flush: require('zlib').Z_SYNC_FLUSH
+}))
 
 // models and routes
 models.init()
