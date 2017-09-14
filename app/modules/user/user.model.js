@@ -1,5 +1,5 @@
 module.exports = (mongoose) => {
-    const AdministratorSchema = new mongoose.Schema({
+    const UserSchema = new mongoose.Schema({
         email: {
             type: String,
         },
@@ -9,5 +9,5 @@ module.exports = (mongoose) => {
         },
     })
 
-    return mongoose.model('User', AdministratorSchema)
+    return mongoose.model('User', UserSchema)
 }
