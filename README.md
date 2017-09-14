@@ -28,6 +28,11 @@ Run Test
 ```
 npm test
 ```
+## Running with docker
+single command
+```
+docker-compose up
+```
 
 ## License
 MIT &copy; [X-Apps](https://github.com/xappsdev)
