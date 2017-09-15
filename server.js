@@ -1,5 +1,6 @@
 // lib's
 const body = require('koa-body')
+const error = require('koa-error')
 const fs = require('fs')
 const helmet = require('koa-helmet')
 const http = require('http')
@@ -10,7 +11,6 @@ const loggerMiddleware = require('koa-logger')
 const jwt = require('./app/middlewares/jwt')
 const compress = require('./app/middlewares/compress')
 const cors = require('./app/middlewares/cors')
-const error = require('./app/middlewares/error')
 
 const logger = require('./app/helpers/logger')
 const models = require('./app/models')
@@ -34,7 +34,10 @@ app.use(loggerMiddleware())
 app.use(cors.corsError)
 app.use(cors.cors)
 app.use(compress)
-app.use(error)
+app.use(error({
+  engine: 'pug',
+  template: __dirname + '/app/helpers/templates/error.pug'
+}))
 
 // models and routes
 models.init()
