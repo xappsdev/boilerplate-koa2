@@ -1,9 +1,9 @@
-let routerCommon = function(controller, router) {
-    router.del('/:id', async (ctx, next) => controller.remove(ctx, next))
-    router.get('/:id', async (ctx, next) => controller.findById(ctx, next))
-    router.patch('/:id', async (ctx, next) => controller.update(ctx, next))
-    router.post('/', async (ctx, next) => controller.find(ctx, next))
-    router.post('/create', async (ctx, next) => controller.save(ctx, next))
+let routerCommon = function(controller, router, jwt) {
+    router.del('/:id', jwt, async (ctx, next) => controller.remove(ctx, next))
+    router.get('/:id', jwt, async (ctx, next) => controller.findById(ctx, next))
+    router.patch('/:id', jwt, async (ctx, next) => controller.update(ctx, next))
+    router.post('/', jwt, async (ctx, next) => controller.find(ctx, next))
+    router.post('/create', jwt, async (ctx, next) => controller.save(ctx, next))
     return router
 }
 

@@ -1,16 +1,18 @@
 const glob = require('glob')
 const path = require('path')
 
-const modelsPath = path.resolve('app/modules')
+const modulesPath = path.resolve('app/modules')
 
-module.exports = (app) => {
-    glob(`${modelsPath}/**/*.router.js`, { dot: true }, function (er, files) {
-        files.forEach(function(route) {
-            app.use(require(route).routes())
-               .use(require(route).allowedMethods({
+const createRoutes = (app, jwt) => {
+    glob(`${modulesPath}/**/*.router.js`, { dot: true }, function (er, files) {
+        files.forEach(function(file) {
+            const route = require(file)(jwt)
+            app.use(route.routes())
+               .use(route.allowedMethods({
                     throw: true
                 }))
         })
     })
-    return app
 }
+
+module.exports = (app, jwt) => createRoutes(app, jwt)

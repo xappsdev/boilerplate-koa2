@@ -4,4 +4,9 @@ module.exports = {
         http: 3000,
         http2: 3001
     },
+    jwt: {
+        public: 'public-key',
+        private: 'private-key',
+        algorithm: 'HS512'
+    }
 }

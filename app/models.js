@@ -7,7 +7,7 @@ const instance = require('./config/instance')
 const mongoose = instance.mongoose
 
 let models = []
-let init = async function() {
+const init = async function() {
     let files = glob.sync(`${modelsPath}/**/*.model.js`, { dot: true })
     await files.forEach(function(model) {
         const fileName = modelName(model)
@@ -15,7 +15,7 @@ let init = async function() {
     })
 }
 
-let modelName = function(model) {
+const modelName = function(model) {
     let result = model.split('/')
     return result[result.length - 1].replace('.model.js', '')
 }
