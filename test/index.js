@@ -12,14 +12,29 @@ const request = supertest.agent(app.listen())
 
 chai.should()
 
+let token = ""
 let user = {}
 
 // tests
+mocha.describe('POST api/auth/', () => {
+    mocha.it('should create a token', (done) => {
+      request
+        .post('/api/auth/')
+        .set('Accept', 'application/json')
+        .send({})
+        .expect(200, (err, res) => {
+            token = "Bearer " + res.body.token
+            done()
+        })
+    })
+})
+
 mocha.describe('POST api/user/create', () => {
     mocha.it('should create a users', (done) => {
       request
         .post('/api/user/create/')
         .set('Accept', 'application/json')
+        .set('Authorization', token)
         .send({
             email: "test@test.com"
         })
@@ -35,6 +50,7 @@ mocha.describe('POST api/user', () => {
       request
         .post('/api/user/')
         .set('Accept', 'application/json')
+        .set('Authorization', token)
         .send({
         })
         .expect(200, (err, res) => {
@@ -48,6 +64,7 @@ mocha.describe('GET api/user/:id', () => {
       request
         .get('/api/user/' + user._id)
         .set('Accept', 'application/json')
+        .set('Authorization', token)
         .expect(200, (err, res) => {
             done()
         })
@@ -59,6 +76,7 @@ mocha.describe('PATCH api/user/:id', () => {
       request
         .patch('/api/user/' + user._id)
         .set('Accept', 'application/json')
+        .set('Authorization', token)
         .send({
             email: "trocouemail@test.com"
         })
@@ -73,6 +91,7 @@ mocha.describe('DELETE api/user/:id', () => {
       request
         .delete('/api/user/' + user._id)
         .set('Accept', 'application/json')
+        .set('Authorization', token)
         .send({
         })
         .expect(200, (err, res) => {

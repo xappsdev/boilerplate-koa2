@@ -41,9 +41,11 @@ models.init()
 routes(app, jwt)
 
 // start
-http.createServer(app.callback()).listen(port.http)
-http2.createServer(certificates, app.callback()).listen(port.http2, () => {
-    logger.log(`Server listening at https://localhost:${port.http2}/api/`)
+http.createServer(app.callback()).listen(port.http, () => {
+  logger.log(`Server listening at http://localhost:${port.http}/api/`)
 })
+// http2.createServer(certificates, app.callback()).listen(port.http2, () => {
+//   logger.log(`Server listening at https://localhost:${port.http2}/api/`)
+// })
 
 module.exports = app
