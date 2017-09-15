@@ -1,11 +1,15 @@
 [![dependency Status](https://img.shields.io/david/xappsdev/boilerplate-koa2.svg?maxAge=1000)](https://img.shields.io/david/xappsdev/boilerplate-koa2.svg)
 [![devDependency Status](https://img.shields.io/david/dev/xappsdev/boilerplate-koa2.svg?maxAge=1000)](https://img.shields.io/david/dev/xappsdev/boilerplate-koa2.svg)
+[![stars](https://img.shields.io/github/stars/xappsdev/boilerplate-koa2.svg?maxAge=1000)](https://img.shields.io/github/stars/xappsdev/boilerplate-koa2.svg)
+[![forks](https://img.shields.io/github/forks/xappsdev/boilerplate-koa2.svg?maxAge=1000)](https://img.shields.io/github/forks/xappsdev/boilerplate-koa2.svg)
 
 ## Description
 Koa 2.x API using:
 
  - Koa 2.x
  - Asynchronous Functions (Async/Await)
+ - Compress, Cors, Error
+ - Json Web Token
  - HTTP/2
  - Mongodb
  - Mongoose
